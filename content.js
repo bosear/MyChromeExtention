@@ -30,7 +30,6 @@ var text = "\n" +
     "};\n";
 
 
-//chrome.storage.local.set({array: arr});
 
 var s = document.createElement("script");
 var arrMsg = [], msg = null;
@@ -47,19 +46,6 @@ document.addEventListener('extension', function (event) {
     arrMsg.push(msg);
     chrome.runtime.sendMessage(msg);
 
-    /*chrome.storage.local.get('arrMsg', function (result) {
-        var arrMsg = [];
-        if (typeof result.arrMsg === 'undefined')
-            console.log('Что-то пошло не так(');
-        else
-            arrMsg = result.arrMsg;
-        arrMsg.push({
-            funcName: data.funcName,
-            code: data.code
-        });
-        chrome.storage.local.set({arrMsg: arrMsg});
-        console.log('Данные получены от страницы и записаны: \n funcName: ' + data.funcName + '\n code: ' + data.code);
-    });*/
 });
 
 chrome.runtime.onMessage.addListener(
@@ -68,6 +54,3 @@ chrome.runtime.onMessage.addListener(
     }
 );
 
-setInterval(function() {
-    chrome.runtime.sendMessage({type: 'lol'});
-}, 2000);
