@@ -4,7 +4,7 @@ function logMessage(msg){
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if (changeInfo.status == 'complete') {
-        chrome.storage.local.remove('arrMsg');
-        chrome.storage.local.set({arrMsg: []});
+        /*chrome.storage.local.remove('arrMsg');
+        chrome.storage.local.set({arrMsg: []});*/
     }
 });
