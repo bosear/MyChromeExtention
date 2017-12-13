@@ -17,8 +17,8 @@ function drawCall(arrMsg) {
         if (msg.type !== 'nirs')
             return;
 
-        var span = document.createElement("span");
-        span.innerHTML += ++number + '. ' +  msg.funcName + ' ';
-        document.body.appendChild(span);
+        var div = document.createElement("div");
+        div.innerHTML += '<b>' + ++number + '.' + '</b> ' +  msg.funcName + ' ' + msg.code;
+        document.body.appendChild(div);
     });
 }
